@@ -14,6 +14,6 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::factory(1)->has(SubProduct::factory(10),'subProducts')->create();
+        Product::factory(2)->has(SubProduct::factory(10),'subProducts')->create();
     }
 }
