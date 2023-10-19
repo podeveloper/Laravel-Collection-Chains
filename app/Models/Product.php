@@ -11,11 +11,11 @@ class Product extends Model
 
     protected $fillable = [
         'name',
+        'price',
     ];
 
     public function subProducts()
     {
         return $this->hasMany(SubProduct::class);
-
     }
 }

@@ -17,7 +17,8 @@ class SubProductFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name,
+            'price' => fake()->numberBetween(1,10),
         ];
     }
 }

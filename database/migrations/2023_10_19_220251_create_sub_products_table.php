@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('sub_products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('price')->default(0);
+            $table->foreignId('product_id')->nullable()->constrained();
             $table->timestamps();
         });
     }
