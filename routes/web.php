@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $product = \App\Models\Product::with('subProducts')->first();
+    $subProductsList = $product->subProducts
+        ->map(fn($subProduct) => $subProduct->name)
+        ->implode('<br>');
+
+    return $subProductsList;
 });
